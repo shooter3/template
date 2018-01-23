@@ -6,76 +6,89 @@ Training template.
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-
-
 ### Installing
 
 A step by step series of examples that tell you have to get a development env running
 
-Copy repository from git.
+Copy repository from git and enter it
 
 ```
 git clone https://github.com/shooter3/template.git
+cd template/
 ```
 
-And repeat
+Open template in text editor (atom)
 
 ```
-until finished
+atom .
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
+Install required dependencies for client
 
 ```
-Give an example
+cd client/
+npm install
 ```
 
-### And coding style tests
-
-Explain what these tests test and why
+Start task manager
 
 ```
-Give an example
+gulp watch:css
 ```
 
-## Deployment
+Install required dependencies for server
 
-Add additional notes about how to deploy this on a live system
+```
+cd ../server/
+npm install
+```
 
-## Built With
+Start app
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+```
+node index.js
+```
 
-## Contributing
+## Server
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+Server is only serving only 'index.html' at path 'template/client/index.html', and static files at path 'template/client/static'
 
-## Versioning
+### HTML
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags).
+All html code goes into file named 'index.html' in folder 'template/client'
 
-## Authors
+### JS
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+All javascript code goes into file named 'index.js' in folder 'template/client/static'
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+### CSS
 
-## License
+All styles are inside folder 'template/client/styles'.
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+All '.scss' files are included into one file named 'interface.scss'.
 
-## Acknowledgments
+```
+@import 'globals';
+@import 'root';
+```
 
-* Hat tip to anyone who's code was used
-* Inspiration
-* etc
+Adding a new '.scss' component:
+
+1. Create a new file for desired component.
+(e.g. for article component create file named 'article.scss' inside 'template/client/styles/components' folder)
+
+2. Include the file into 'interface.scss'
+
+```
+@import 'components/article.scss'
+```
+
+3. Write all styles related to article component into the 'article.scss' file.
+
+```
+article
+{
+    height: ...;
+    width: ...;
+}
+```

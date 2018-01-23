@@ -10,5 +10,5 @@ app.get('/', function(req, res) {
 
 
 app.listen(3000, () => {
-    console.log('Template app is running at: "localhost:3000"')
+    console.log('Open your app in browser: "localhost:3000"')
 });
