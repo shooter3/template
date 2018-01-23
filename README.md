@@ -2,11 +2,7 @@
 
 Training template.
 
-## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
-### Installing
+## Installing
 
 A step by step series of examples that tell you have to get a development env running
 
@@ -53,15 +49,15 @@ node index.js
 
 Server is only serving only 'index.html' at path 'template/client/index.html', and static files at path 'template/client/static'
 
-### HTML
+## HTML
 
 All html code goes into file named 'index.html' in folder 'template/client'
 
-### JS
+## JS
 
 All javascript code goes into file named 'index.js' in folder 'template/client/static'
 
-### CSS
+## CSS
 
 All styles are inside folder 'template/client/styles'.
 
@@ -91,4 +87,59 @@ article
     height: ...;
     width: ...;
 }
+```
+
+## Moving around in cli
+
+Few commands used to move around in cli.
+
+### Use tab to autocomplete
+
+e.g. Pro + tab Projects if Projects exists
+
+### Show folder content
+
+```
+ls
+```
+
+### Move around
+
+Moves you to root
+```
+cd
+```
+
+Moves you to desired folder
+```
+cd name-of-folder/
+```
+
+Moves you one step back
+```
+cd ../
+```
+
+### Create new
+
+Folder
+```
+mkdir name-of-folder
+```
+
+File
+```
+touch name-of-file.extension
+```
+
+### Other
+
+Delete file
+```
+rm name-of-file
+```
+
+Delete folder
+```
+rm -r name-of-folder/
 ```
